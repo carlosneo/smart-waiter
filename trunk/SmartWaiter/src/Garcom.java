@@ -1,5 +1,5 @@
 
-public class Garcom {
+public class Garcom extends FabricaPedido{
  
 	private ControladoraPedido controladoraPedido;
 	 

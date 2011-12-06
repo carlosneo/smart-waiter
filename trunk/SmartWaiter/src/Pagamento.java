@@ -9,11 +9,12 @@ public abstract class Pagamento {
 	 
 	private ControladoraPagamento controladoraPagamento;
 	 
-	public Pagamento Pagamento() {
-		return null;
-	}
-	 
-	public Pagamento definirFormaPagamento(String forma) {
+	public static Pagamento definirFormaPagamento(String forma) {
+		if(forma.equals("Dinheiro"))
+			return Dinheiro.obterInstancia();
+		else if(forma.equals("Cart‹o"))
+			return Cartao.obterInstancia();
+		
 		return null;
 	}
 	 

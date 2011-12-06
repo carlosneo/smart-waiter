@@ -1,4 +1,5 @@
 import java.sql.Time;
+import java.util.Arrays;
 import java.util.Date;
 
 
@@ -30,8 +31,17 @@ public class Conta {
 	
 	private ControladoraConta controladoraConta;
 	 
-	public Conta Conta(int numeroMesa) {
-		return null;
+	public Conta(int numeroMesa) {
+		this.valorTotal = 100.0f; 
+		this.status = true;
+		for(int i=0;i<10;i++){
+			this.idPedido[i] = i;
+			this.itemDoPedido[i] = i*2;
+		}
+		this.m = new Mesa();
+		this.mesa = new Mesa();
+		this.pagamento = Pagamento.definirFormaPagamento("Dinheiro");
+		this.pedido = null;
 	}
 	 
 	public void selecionarConta(Conta c) {
@@ -49,6 +59,19 @@ public class Conta {
 	public Conta adicionarConta(int numeroMesa) {
 		return null;
 	}
-	 
+
+	@Override
+	public String toString() {
+		return "Conta [dataAbertura=" + dataAbertura + ", dataFechamento="
+				+ dataFechamento + ", horaAbertura=" + horaAbertura
+				+ ", horaFechamento=" + horaFechamento + ", valorTotal="
+				+ valorTotal + ", status=" + status + ", idPedido="
+				+ Arrays.toString(idPedido) + ", itemDoPedido="
+				+ Arrays.toString(itemDoPedido) + ", m=" + m + ", mesa=" + mesa
+				+ ", pagamento=" + pagamento + ", pedido=" + pedido
+				+ ", controladoraConta=" + controladoraConta + "]";
+	}
+	
+	
 }
  

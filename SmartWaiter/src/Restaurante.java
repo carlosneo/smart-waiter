@@ -9,8 +9,6 @@ public abstract class Restaurante {
 	 
 	private Bar bar;
 	 
-	private Registradora registradora;
-	 
 	private Mesa mesa;
 	 
 	private DescricaoItem descricaoItem;

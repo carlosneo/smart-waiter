@@ -25,10 +25,25 @@ public class ClasseTeste {
 	public void testeIniciarPedido(){
 		Mesa mesa = Mesa.obterMesa(1, true);
 		ControladoraPedido ctrlPedido = ControladoraPedido.obterControladoraPedido();
-		Pedido p = ctrlPedido.iniciarPedido(mesa);
-		//Testes na operação iniciarPedido
+		Pedido p = ctrlPedido.iniciarPedido(mesa, 0);
+		
+		//Testes na operação iniciarPedido()
 		Assert.assertNotNull(p);
 		Assert.assertTrue(Pedido.class.isInstance(p));
+		Assert.assertTrue(Mesa.class.isInstance(p.getMesa()));
+	}
+	
+	@Test
+	public void testeInserirNovoItem(){
+		Mesa mesa = Mesa.obterMesa(2, true);
+		ControladoraPedido ctrlPedido = ControladoraPedido.obterControladoraPedido();
+		Pedido p = ctrlPedido.iniciarPedido(mesa, 0);
+		Item item = Item.adicionarItem(1);
+		
+		ctrlPedido.inserirNovoItem(item, 2, p);
+		
+		//Testes na operação de inserirNovoItem()
+		
 	}
 	
 	

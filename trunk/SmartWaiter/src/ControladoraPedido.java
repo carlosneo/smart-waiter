@@ -3,7 +3,7 @@ public class ControladoraPedido {
  
 	private Pedido pedido[] = new Pedido[100];
 	public static ControladoraPedido instanciaControladoraPedido = null;
-	static int i=-1;
+	static int i;
 	
 	private ControladoraPedido(){
 		
@@ -16,14 +16,14 @@ public class ControladoraPedido {
 		return instanciaControladoraPedido;
 	}
 	 
-	public Pedido iniciarPedido(Mesa mesa) {
+	public Pedido iniciarPedido(Mesa mesa, int idPedido) {
 		i++;
-		pedido[i] = Pedido.novoPedido(mesa);
+		pedido[i] = Pedido.novoPedido(mesa, i);
 		return pedido[i];
 	}
 	 
-	public void inserirNovoItem(int idItem, int quantidade, Pedido p) {
-		p.itemDoPedido(idItem, quantidade);
+	public void inserirNovoItem(Item item, int quantidade, Pedido p) {
+		p.inserirItem(item, quantidade);
 	}
 	 
 	public void finalizarPedido(Pedido p) {

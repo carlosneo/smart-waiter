@@ -5,7 +5,7 @@ public class Pagamento {
 	Conta conta;
 	Mesa mesa;
 	
-	public void pagar() {}
+	public void pagar() {};
 	
 	public static Pagamento definirFormaPagamento(String forma, Mesa m, Conta c) {
 		if(forma.equals("Dinheiro"))

@@ -28,6 +28,7 @@ public class ClasseTeste {
 		Pedido p = ctrlPedido.iniciarPedido(mesa, 0);
 		
 		//Testes na operação iniciarPedido()
+		System.out.println(p);
 		Assert.assertNotNull(p);
 		Assert.assertTrue(Pedido.class.isInstance(p));
 		Assert.assertTrue(Mesa.class.isInstance(p.getMesa()));
@@ -43,7 +44,9 @@ public class ClasseTeste {
 		ctrlPedido.inserirNovoItem(item, 2, p);
 		
 		//Testes na operação de inserirNovoItem()
-		
+		Assert.assertNotNull(p.getIp());
+		System.out.println(p.getIp());
+		Assert.assertTrue(ItemPedido.class.isInstance(p.getIp()));
 	}
 	
 	

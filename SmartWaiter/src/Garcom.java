@@ -1,5 +1,5 @@
 
-public class Garcom extends FabricaPedido{
+public class Garcom {
  
 	private ControladoraPedido controladoraPedido;
 	
@@ -9,10 +9,6 @@ public class Garcom extends FabricaPedido{
 	
 	public static Garcom obterGarcom(){
 		return new Garcom();
-	}
-	
-	public static Pedido novoPedido(int numeroMesa){
-		return null;
 	}
 	 
 }

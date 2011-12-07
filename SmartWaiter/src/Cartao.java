@@ -1,19 +1,11 @@
 
 public class Cartao extends Pagamento {
- 
-	static Cartao cartao;
 	
 	public void pagar() {
-	 
+		System.out.println("Realizando pagamento com Cart‹o!");
 	}
 	
-	public static Pagamento obterInstancia(){
-		return cartao;
+	public Cartao() {
 	}
-	
-	private Cartao() {
-		Cartao.cartao = new Cartao();
-	}
-	 
 }
  

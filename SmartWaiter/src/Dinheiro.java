@@ -1,21 +1,11 @@
 
 public class Dinheiro extends Pagamento {
- 
-	static Dinheiro dinheiro;
 	
 	public void pagar() {
-	 
-	}
-
-	public static Pagamento obterInstancia(){
-		return dinheiro;
+		System.out.println("Realizando pagamento em Dinheiro!");
 	}
 	
-	private Dinheiro() {
-		Dinheiro.dinheiro = new Dinheiro();
+	public Dinheiro() {
 	}
-	
-	
-	 
 }
  

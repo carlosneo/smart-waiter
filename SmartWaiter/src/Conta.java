@@ -19,7 +19,7 @@ public class Conta {
 	 
 	private int[ ] idPedido;
 	 
-	private int [ ] itemDoPedido;
+	private int[ ] itemDoPedido;
 	 
 	private Mesa m;
 	 
@@ -32,16 +32,8 @@ public class Conta {
 	private ControladoraConta controladoraConta;
 	 
 	public Conta(int numeroMesa) {
-		this.valorTotal = 100.0f; 
-		this.status = true;
-		for(int i=0;i<10;i++){
-			this.idPedido[i] = i;
-			this.itemDoPedido[i] = i*2;
-		}
-		this.m = new Mesa();
-		this.mesa = new Mesa();
+		this.valorTotal = (float) 100.0;
 		this.pagamento = Pagamento.definirFormaPagamento("Dinheiro");
-		this.pedido = null;
 	}
 	 
 	public void selecionarConta(Conta c) {
@@ -71,7 +63,110 @@ public class Conta {
 				+ ", pagamento=" + pagamento + ", pedido=" + pedido
 				+ ", controladoraConta=" + controladoraConta + "]";
 	}
-	
-	
+
+	public Date getDataAbertura() {
+		return dataAbertura;
+	}
+
+	public void setDataAbertura(Date dataAbertura) {
+		this.dataAbertura = dataAbertura;
+	}
+
+	public Date getDataFechamento() {
+		return dataFechamento;
+	}
+
+	public void setDataFechamento(Date dataFechamento) {
+		this.dataFechamento = dataFechamento;
+	}
+
+	public Time getHoraAbertura() {
+		return horaAbertura;
+	}
+
+	public void setHoraAbertura(Time horaAbertura) {
+		this.horaAbertura = horaAbertura;
+	}
+
+	public Time getHoraFechamento() {
+		return horaFechamento;
+	}
+
+	public void setHoraFechamento(Time horaFechamento) {
+		this.horaFechamento = horaFechamento;
+	}
+
+	public float getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(float valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+	public int[] getIdPedido() {
+		return idPedido;
+	}
+
+	public void setIdPedido(int[] idPedido) {
+		this.idPedido = idPedido;
+	}
+
+	public int[] getItemDoPedido() {
+		return itemDoPedido;
+	}
+
+	public void setItemDoPedido(int[] itemDoPedido) {
+		this.itemDoPedido = itemDoPedido;
+	}
+
+	public Mesa getM() {
+		return m;
+	}
+
+	public void setM(Mesa m) {
+		this.m = m;
+	}
+
+	public Mesa getMesa() {
+		return mesa;
+	}
+
+	public void setMesa(Mesa mesa) {
+		this.mesa = mesa;
+	}
+
+	public Pagamento getPagamento() {
+		return pagamento;
+	}
+
+	public void setPagamento(Pagamento pagamento) {
+		this.pagamento = pagamento;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+
+	public ControladoraConta getControladoraConta() {
+		return controladoraConta;
+	}
+
+	public void setControladoraConta(ControladoraConta controladoraConta) {
+		this.controladoraConta = controladoraConta;
+	}
+
 }
  

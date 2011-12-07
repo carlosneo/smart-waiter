@@ -16,18 +16,18 @@ public class ControladoraPedido {
 		return instanciaControladoraPedido;
 	}
 	 
-	public Pedido iniciarPedido(Mesa mesa, String status, ItemPedido ip[], int idPedido) {
+	public Pedido iniciarPedido(Mesa mesa, int idPedido) {
 		i++;
-		pedido[i] = Pedido.novoPedido(mesa, status, ip, idPedido);
+		pedido[i] = Pedido.novoPedido(mesa, idPedido);
 		return pedido[i];
 	}
 	 
 	public void inserirNovoItem(Item item, int quantidade, Pedido p) {
 		p.inserirItem(item, quantidade);
 	}
-	 
-	public void finalizarPedido(Pedido p) {
-	 
+	
+	public void finalizarPedido(Pedido p, String setor) {
+		p.alterarStatus(p, setor);
 	}
 	 
 }

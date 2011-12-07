@@ -16,9 +16,9 @@ public class ControladoraPedido {
 		return instanciaControladoraPedido;
 	}
 	 
-	public Pedido iniciarPedido(Mesa mesa, int idPedido) {
+	public Pedido iniciarPedido(Mesa mesa, String status, ItemPedido ip[], int idPedido) {
 		i++;
-		pedido[i] = Pedido.novoPedido(mesa, i);
+		pedido[i] = Pedido.novoPedido(mesa, status, ip, idPedido);
 		return pedido[i];
 	}
 	 

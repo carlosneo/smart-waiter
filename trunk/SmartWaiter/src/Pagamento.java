@@ -1,33 +1,26 @@
 
 public abstract class Pagamento {
 	
-	private float valor;
-	private Conta conta;
-	private Mesa mesa;
-	private ControladoraPagamento controladoraPagamento;
+	Conta conta;
+	ControladoraPagamento controladoraPagamento;
+	
+	float valor;
+	Mesa mesa;
+	static Pagamento pgto;
 	
 	public abstract void pagar();
 	
-	/**
-	 * MŽtodo responsavel
-	 * @param forma = string da forma de pagamento
-	 * @return 
-	 */
-	public static Pagamento definirFormaPagamento(String forma) {
+	public static Pagamento definirFormaPagamento(String forma, Mesa m) {
 		if(forma.equals("Dinheiro"))
-			return new Dinheiro();
+			return pgto = new Dinheiro(m);
 		else if(forma.equals("Cart‹o"))
-			return new Cartao();
+			return pgto = new Cartao(m);
 		
-		return null;
+		return pgto = null;
 	}
 	
-	/**
-	 * 
-	 * @return
-	 */
-	public Pagamento criarPagamento() {
-		return null;
+	public static Pagamento criarPagamento(Mesa m) {
+		return pgto;
 	}
 }
  

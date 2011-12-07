@@ -6,34 +6,21 @@ import java.util.Date;
 public class Conta {
  
 	private Date dataAbertura;
-	 
 	private Date dataFechamento;
-	 
 	private Time horaAbertura;
-	 
 	private Time horaFechamento;
-	 
 	private float valorTotal;
-	 
 	private boolean status;
-	 
 	private int[ ] idPedido;
-	 
 	private int[ ] itemDoPedido;
-	 
 	private Mesa m;
-	 
 	private Mesa mesa;
-	 
 	private Pagamento pagamento;
-	 
 	private Pedido pedido;
-	
 	private ControladoraConta controladoraConta;
-	 
+	
 	public Conta(int numeroMesa) {
 		this.valorTotal = (float) 100.0;
-		this.pagamento = Pagamento.definirFormaPagamento("Dinheiro");
 	}
 	 
 	public void selecionarConta(Conta c) {
@@ -48,7 +35,7 @@ public class Conta {
 		return 0;
 	}
 	 
-	public Conta adicionarConta(int numeroMesa) {
+	public static Conta adicionarConta(int numeroMesa) {
 		return null;
 	}
 
@@ -64,6 +51,10 @@ public class Conta {
 				+ ", controladoraConta=" + controladoraConta + "]";
 	}
 
+	/*
+	 * Getters and Setters
+	 */
+	
 	public Date getDataAbertura() {
 		return dataAbertura;
 	}
@@ -167,6 +158,5 @@ public class Conta {
 	public void setControladoraConta(ControladoraConta controladoraConta) {
 		this.controladoraConta = controladoraConta;
 	}
-
 }
  

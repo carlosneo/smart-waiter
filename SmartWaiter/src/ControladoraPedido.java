@@ -2,10 +2,8 @@
 public class ControladoraPedido {
  
 	private Pedido pedido[] = new Pedido[100];
-
-	static int i=-1;
-	
 	public static ControladoraPedido instanciaControladoraPedido = null;
+	static int i=-1;
 	
 	private ControladoraPedido(){
 		
@@ -25,7 +23,7 @@ public class ControladoraPedido {
 	}
 	 
 	public void inserirNovoItem(int idItem, int quantidade, Pedido p) {
-	 
+		p.itemDoPedido(idItem, quantidade);
 	}
 	 
 	public void finalizarPedido(Pedido p) {

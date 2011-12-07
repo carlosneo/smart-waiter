@@ -3,6 +3,7 @@ public class ControladoraPagamento {
  
 	private static Pagamento pgto;
 	private Mesa mesa;
+	private Conta conta;
 	public static ControladoraPagamento instanciaControladoraPagamento = null;
 	
 	/*
@@ -27,9 +28,9 @@ public class ControladoraPagamento {
 	 */
 	public void inciarPagamento(Mesa m) {
 		this.mesa = m;
-		pgto = Pagamento.criarPagamento(m);
-		pgto.conta = Conta.adicionarConta(m.getNumeroMesa());
-		pgto.valor = Conta.adicionarConta(m.getNumeroMesa()).getValorTotal();
+		this.conta = Conta.adicionarConta(m.getNumeroMesa());
+		pgto = Pagamento.criarPagamento(m,this.conta);
+		pgto.valor = pgto.conta.getValorTotal();
 		System.out.println(pgto.toString());
 	}
 	
@@ -37,16 +38,17 @@ public class ControladoraPagamento {
 	 * O objeto pgto Ž retornado com o seu respectivo objeto especializado
 	 * (Dinheiro ou Cart‹o)
 	 */
-	public void escolherFormaPagamento() {
-		pgto = Pagamento.definirFormaPagamento("Dinheiro", mesa);
+	public void escolherFormaPagamento(String forma) {
+		pgto = Pagamento.definirFormaPagamento(forma,mesa,conta);
+		System.out.println(pgto.toString());
 	}
 	
 	/*
 	 * pgto.valor igual a valor da conta
 	 */
 	public void finalizarPagamento(Pagamento pgto) {
-		pgto = this.pgto;
-		pgto.pagar();
+		this.pgto.pagar();
+		System.out.println(this.pgto.toString());
 	}
 	 
 }

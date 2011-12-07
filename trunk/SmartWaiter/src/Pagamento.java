@@ -1,25 +1,32 @@
 
-public abstract class Pagamento {
+public class Pagamento {
 	
 	float valor;
 	Conta conta;
 	Mesa mesa;
-	static Pagamento pgto;
-	//ControladoraPagamento controladoraPagamento;
 	
-	public abstract void pagar();
+	public void pagar() {}
 	
 	public static Pagamento definirFormaPagamento(String forma, Mesa m) {
 		if(forma.equals("Dinheiro"))
-			return pgto = new Dinheiro(m);
+			return new Dinheiro();
 		else if(forma.equals("Cart‹o"))
-			return pgto = new Cartao(m);
+			return new Cartao();
 		
-		return pgto = null;
+		return null;
 	}
 	
 	public static Pagamento criarPagamento(Mesa m) {
-		return pgto;
+		return new Pagamento(m);
+	}
+
+	public Pagamento(Mesa m) {
+		this.mesa = m;
+	}
+
+	@Override
+	public String toString() {
+		return "Pagamento [valor=" + valor + ", mesa=" + mesa + "]";
 	}
 }
  

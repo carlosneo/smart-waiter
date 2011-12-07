@@ -21,5 +21,12 @@ public class ClasseTeste {
 		Assert.assertSame(c5, c6);
 	}
 	
+	@Test
+	public void testeConta(){
+		Pagamento p = Pagamento.definirFormaPagamento("Cart‹o");
+		
+		p.pagar();
+	}
+	
 	
 }

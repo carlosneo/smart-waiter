@@ -5,6 +5,7 @@ public class Cartao extends Pagamento {
 		super(m,c);
 	}
 
+	@Override
 	public void pagar() {
 		this.valor = conta.getValorTotal();
 	}

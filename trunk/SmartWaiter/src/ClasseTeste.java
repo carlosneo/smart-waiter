@@ -22,10 +22,14 @@ public class ClasseTeste {
 	}
 	
 	@Test
-	public void testeConta(){
-		Pagamento p = Pagamento.definirFormaPagamento("Cart‹o");
+	public void testeIniciarPedido(){
+		Mesa mesa = Mesa.obterMesa(1, true);
+		ControladoraPedido ctrlPedido = ControladoraPedido.obterControladoraPedido();
+		Pedido p = ctrlPedido.iniciarPedido(mesa);
 		
-		p.pagar();
+		//Testes na operação iniciarPedido
+		Assert.assertNotNull(p);
+		Assert.assertTrue(Pedido.class.isInstance(p));
 	}
 	
 	

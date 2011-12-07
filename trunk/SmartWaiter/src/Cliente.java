@@ -1,5 +1,5 @@
 
-public class Cliente extends FabricaPedido {
+public class Cliente  {
  
 	private Mesa mesa; 
 	private ControladoraPedido controladoraPedido;

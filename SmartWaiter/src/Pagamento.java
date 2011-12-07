@@ -1,12 +1,11 @@
 
 public abstract class Pagamento {
 	
-	Conta conta;
-	ControladoraPagamento controladoraPagamento;
-	
 	float valor;
+	Conta conta;
 	Mesa mesa;
 	static Pagamento pgto;
+	//ControladoraPagamento controladoraPagamento;
 	
 	public abstract void pagar();
 	

@@ -12,8 +12,7 @@ public class Dinheiro extends Pagamento {
 
 	@Override
 	public String toString() {
-		return "Dinheiro [valor=" + valor + ", conta=" + conta + ", mesa="
-				+ mesa + "]";
+		return "Dinheiro [valor=" + valor + ", conta=" + conta + ", mesa=" + mesa + "]";
 	}
 }
  

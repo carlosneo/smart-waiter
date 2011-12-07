@@ -13,7 +13,7 @@ public class Mesa {
 	public Mesa(int numeroMesa, boolean status){
 		this.numeroMesa = numeroMesa;
 		this.status = status;
-		
+		this.conta = Conta.adicionarConta(numeroMesa);
 	}
 
 	public static Mesa obterMesa(int numeroMesa, boolean status) {

@@ -12,8 +12,7 @@ public class Cartao extends Pagamento {
 
 	@Override
 	public String toString() {
-		return "Cartao [valor=" + valor + ", conta=" + conta + ", mesa=" + mesa
-				+ "]";
+		return "Cartao [valor=" + valor + ", conta=" + conta + ", mesa=" + mesa + "]";
 	}
 }
  

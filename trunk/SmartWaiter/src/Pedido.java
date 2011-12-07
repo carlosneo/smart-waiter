@@ -8,9 +8,8 @@ public class Pedido {
 	private Mesa mesa;
 	private Item item;
 	private Conta conta;
-	private ItemPedido itemPedido;
 	private ControladoraPedido controladoraPedido;
-	static int i = -1;
+	static int i;
 	
 	private Pedido(Mesa mesa, int idPedido){
 		this.mesa = mesa;
@@ -95,14 +94,6 @@ public class Pedido {
 
 	public void setConta(Conta conta) {
 		this.conta = conta;
-	}
-
-	public ItemPedido getItemPedido() {
-		return itemPedido;
-	}
-
-	public void setItemPedido(ItemPedido itemPedido) {
-		this.itemPedido = itemPedido;
 	}
 
 	public ControladoraPedido getControladoraPedido() {

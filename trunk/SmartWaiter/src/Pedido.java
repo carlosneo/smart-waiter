@@ -13,7 +13,6 @@ public class Pedido {
 		this.mesa = mesa;
 		this.status = "em andamento";
 		this.setIdPedido(idPedido);
-		System.out.println("Mesa " + this.mesa.getNumeroMesa() + " associada ao pedido");
 	}
 	
 	public void inserirItem(Item item, int quantidade) {

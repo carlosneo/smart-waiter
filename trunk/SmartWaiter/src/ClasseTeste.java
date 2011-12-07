@@ -26,7 +26,6 @@ public class ClasseTeste {
 		Mesa mesa = Mesa.obterMesa(1, true);
 		ControladoraPedido ctrlPedido = ControladoraPedido.obterControladoraPedido();
 		Pedido p = ctrlPedido.iniciarPedido(mesa);
-		
 		//Testes na operação iniciarPedido
 		Assert.assertNotNull(p);
 		Assert.assertTrue(Pedido.class.isInstance(p));

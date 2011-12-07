@@ -24,19 +24,19 @@ public class Conta {
 	}
 	 
 	public void selecionarConta(Conta c) {
-	 
+		
 	}
 	 
 	public void inserirPedido(int idPedido) {
-	 
+		
 	}
 	 
 	public float calcularValorTotal(Conta c) {
-		return 0;
+		return this.valorTotal = 0;
 	}
 	 
 	public static Conta adicionarConta(int numeroMesa) {
-		return null;
+		return new Conta(numeroMesa);
 	}
 
 	@Override
@@ -54,7 +54,6 @@ public class Conta {
 	/*
 	 * Getters and Setters
 	 */
-	
 	public Date getDataAbertura() {
 		return dataAbertura;
 	}

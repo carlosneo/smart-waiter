@@ -1,13 +1,17 @@
 
 public class Dinheiro extends Pagamento {
 	
+	public Dinheiro(Mesa m, Conta c) {
+		super(m,c);
+	}
+
 	public void pagar() {
-		System.out.println("Realizando pagamento com Dinheiro!");
+		this.valor = conta.getValorTotal();
 	}
-	
-	public Dinheiro() {
-		super();
+
+	@Override
+	public String toString() {
+		return "Dinheiro [valor=" + valor + ", conta=" + conta + ", mesa=" + mesa + "]";
 	}
-	
 }
  

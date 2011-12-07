@@ -1,5 +1,4 @@
 import java.sql.Time;
-import java.util.Arrays;
 import java.util.Date;
 
 
@@ -21,7 +20,6 @@ public class Conta {
 	
 	public Conta(int numeroMesa) {
 		this.valorTotal = (float) 100.0;
-		this.toString();
 	}
 	 
 	public void selecionarConta(Conta c) {
@@ -38,18 +36,6 @@ public class Conta {
 	 
 	public static Conta adicionarConta(int numeroMesa) {
 		return new Conta(numeroMesa);
-	}
-
-	@Override
-	public String toString() {
-		return "Conta [dataAbertura=" + dataAbertura + ", dataFechamento="
-				+ dataFechamento + ", horaAbertura=" + horaAbertura
-				+ ", horaFechamento=" + horaFechamento + ", valorTotal="
-				+ valorTotal + ", status=" + status + ", idPedido="
-				+ Arrays.toString(idPedido) + ", itemDoPedido="
-				+ Arrays.toString(itemDoPedido) + ", m=" + m + ", mesa=" + mesa
-				+ ", pagamento=" + pagamento + ", pedido=" + pedido
-				+ ", controladoraConta=" + controladoraConta + "]";
 	}
 
 	/*

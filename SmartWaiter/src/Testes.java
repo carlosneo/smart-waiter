@@ -25,12 +25,16 @@ public class Testes {
 		Mesa mesa = Mesa.obterMesa(1, true);
 		ControladoraPagamento cp = ControladoraPagamento.obterControladoraPagamento();
 		cp.inciarPagamento(mesa);
-		cp.escolherFormaPagamento("Dinheiro");
+		String formaPag;
+		
+		formaPag="Dinheiro";
+		cp.escolherFormaPagamento(formaPag);
 		
 		Assert.assertNotNull(cp.getPgto());
 		Assert.assertTrue(Pagamento.class.isInstance(cp.getPgto()[1]));
-		
-		cp.escolherFormaPagamento("Cart‹o");
+
+		formaPag="Cart‹o";
+		cp.escolherFormaPagamento(formaPag);
 		
 		Assert.assertNotNull(cp.getPgto());
 		Assert.assertTrue(Pagamento.class.isInstance(cp.getPgto()[1]));
@@ -42,7 +46,8 @@ public class Testes {
 		Mesa mesa = Mesa.obterMesa(1, true);
 		ControladoraPagamento cp = ControladoraPagamento.obterControladoraPagamento();
 		cp.inciarPagamento(mesa);
-		cp.escolherFormaPagamento("Dinheiro");
+		String formaPag = "Dinheiro";
+		cp.escolherFormaPagamento(formaPag);
 		cp.finalizarPagamento();
 		
 		Assert.assertNotNull(cp.getPgto());

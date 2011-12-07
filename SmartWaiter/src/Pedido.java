@@ -2,21 +2,22 @@
 public class Pedido {
  
 	private int idPedido;
-	 
 	private String status;
-	 
 	private int[ ] idItemPedido;
-	 
 	private Mesa mesa;
-
 	private Item item;
-	 
 	private Conta conta;
-	 
 	private ItemPedido itemPedido;
-	 
 	private ControladoraPedido controladoraPedido;
-	 
+	
+	private Pedido(){
+		
+	}
+	
+	public static Pedido obterPedido(){
+		return new Pedido();
+	}
+	
 	public Pedido novoPedido(int numeroMesa) {
 		return null;
 	}

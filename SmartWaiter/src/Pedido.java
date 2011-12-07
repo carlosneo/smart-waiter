@@ -1,6 +1,7 @@
 
 public class Pedido {
  
+	private int idPedido;
 	private Pedido p;
 	private String status;
 	private ItemPedido ip[] = new ItemPedido[100];
@@ -11,24 +12,28 @@ public class Pedido {
 	private ControladoraPedido controladoraPedido;
 	static int i = -1;
 	
-	private Pedido(Mesa mesa){
+	private Pedido(Mesa mesa, int idPedido){
 		this.mesa = mesa;
-		System.out.println("Mesa associada ao pedido");
+		this.idPedido = idPedido;
+		System.out.println("Mesa " + this.mesa.getNumeroMesa() + " associada ao pedido");
 	}
-
-	public void itemDoPedido(int dPedido, int quantidade) {
-		i++;
+	
+	public ItemPedido inserirItem(Item item, int quantidade) {
+		 i++;
+		 this.item = item;
+		 ip[i] = ItemPedido.obterItemPedido(item, quantidade);
+		 return ip[i];
+	}
+	
+	public void itemDoPedido(int dPedido) {
+	
+	}
 		
-	}
-	public static Pedido novoPedido(Mesa mesa) {
-		return new Pedido(mesa);
+	public static Pedido novoPedido(Mesa mesa, int idPedido) {
+		return new Pedido(mesa, idPedido);
 	}
 	 
 	public void selecionarPedido(int idPedido) {
-	 
-	}
-	 
-	public void inserirItem(int idItem, int quantidade) {
 	 
 	}
 	 
@@ -114,6 +119,14 @@ public class Pedido {
 
 	public static void setI(int i) {
 		Pedido.i = i;
+	}
+
+	public void setIdPedido(int idPedido) {
+		this.idPedido = idPedido;
+	}
+
+	public int getIdPedido() {
+		return idPedido;
 	}
 
 

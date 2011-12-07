@@ -17,11 +17,10 @@ public class Pedido {
 		System.out.println("Mesa " + this.mesa.getNumeroMesa() + " associada ao pedido");
 	}
 	
-	public ItemPedido inserirItem(Item item, int quantidade) {
+	public void inserirItem(Item item, int quantidade) {
 		 i++;
 		 this.item = item;
 		 ip[i] = ItemPedido.obterItemPedido(item, quantidade);
-		 return ip[i];
 	}
 	
 	public void itemDoPedido(int dPedido) {

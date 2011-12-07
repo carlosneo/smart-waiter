@@ -5,14 +5,9 @@ public class Dinheiro extends Pagamento {
 		System.out.println("Realizando pagamento com Dinheiro!");
 	}
 	
-	public Dinheiro(Mesa m) {
-		this.mesa = m;
-		this.toString();
+	public Dinheiro() {
+		super();
 	}
-
-	@Override
-	public String toString() {
-		return "Dinheiro [valor=" + valor + ", conta=" + conta + ", mesa=" + mesa + "]";
-	}
+	
 }
  

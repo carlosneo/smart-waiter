@@ -21,6 +21,7 @@ public class Conta {
 	
 	public Conta(int numeroMesa) {
 		this.valorTotal = (float) 100.0;
+		this.toString();
 	}
 	 
 	public void selecionarConta(Conta c) {
@@ -32,7 +33,7 @@ public class Conta {
 	}
 	 
 	public float calcularValorTotal(Conta c) {
-		return this.valorTotal = 0;
+		return this.valorTotal = (float) 123.79;
 	}
 	 
 	public static Conta adicionarConta(int numeroMesa) {

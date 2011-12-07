@@ -2,6 +2,7 @@
 public class ControladoraPagamento {
  
 	private static Pagamento pgto;
+	private Mesa mesa;
 	public static ControladoraPagamento instanciaControladoraPagamento = null;
 	
 	/*
@@ -22,11 +23,14 @@ public class ControladoraPagamento {
 	 * Foi criada uma inst‰ncia pgto de Pagamento - ok
 	 * A inst‰ncia de pgto Ž associada a Mesa m - ok
 	 * A inst‰ncia pgto recebe valorTotal da Conta - ok
-	 * Iniciar atributos de pgto  
+	 * Iniciar atributos de pgto - ok
 	 */
 	public void inciarPagamento(Mesa m) {
+		this.mesa = m;
 		pgto = Pagamento.criarPagamento(m);
+		pgto.conta = Conta.adicionarConta(m.getNumeroMesa());
 		pgto.valor = Conta.adicionarConta(m.getNumeroMesa()).getValorTotal();
+		System.out.println(pgto.toString());
 	}
 	
 	/*
@@ -34,7 +38,7 @@ public class ControladoraPagamento {
 	 * (Dinheiro ou Cart‹o)
 	 */
 	public void escolherFormaPagamento() {
-		//pgto = Pagamento.definirFormaPagamento("Cart‹o", mesa);
+		pgto = Pagamento.definirFormaPagamento("Dinheiro", mesa);
 	}
 	
 	/*

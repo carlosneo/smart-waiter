@@ -6,14 +6,17 @@ import org.junit.Test;
 public class Testes {
 
 	@Test
-	public void testControladoraPagamento() {
+	public void testeIniciarPagamento() {
 		Mesa mesa = Mesa.obterMesa(1, true);
 		ControladoraPagamento cp = ControladoraPagamento.obterControladoraPagamento();
 		cp.inciarPagamento(mesa);
+		
+		
+		
+		
 		cp.escolherFormaPagamento("Dinheiro");
 		Pagamento pgto = null;
 		cp.finalizarPagamento(pgto);
-		
 	}
 
 }

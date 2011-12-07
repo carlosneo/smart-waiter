@@ -7,9 +7,9 @@ public class ItemPedido {
 	private DescricaoItem descricaoItem;
 	 
 	private ItemPedido(Item item, int quantidade){
-		System.out.println();
 		this.item = item;
 		this.quantidade = quantidade;
+		this.descricaoItem = item.getDescricaoItem();
 	}
 	
 	public int selecionaItem(Item item, int quantidade) {

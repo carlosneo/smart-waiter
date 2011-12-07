@@ -28,7 +28,6 @@ public class ClasseTeste {
 		Pedido p = ctrlPedido.iniciarPedido(mesa, 0);
 		
 		//Testes na operação iniciarPedido()
-		System.out.println(p);
 		Assert.assertNotNull(p);
 		Assert.assertTrue(Pedido.class.isInstance(p));
 		Assert.assertTrue(Mesa.class.isInstance(p.getMesa()));
@@ -40,14 +39,20 @@ public class ClasseTeste {
 		ControladoraPedido ctrlPedido = ControladoraPedido.obterControladoraPedido();
 		Pedido p = ctrlPedido.iniciarPedido(mesa, 0);
 		Item item = Item.adicionarItem(1);
+		int quantidade = 2;
 		
-		ctrlPedido.inserirNovoItem(item, 2, p);
+		ctrlPedido.inserirNovoItem(item, quantidade, p);
 		
 		//Testes na operação de inserirNovoItem()
 		Assert.assertNotNull(p.getIp());
-		System.out.println(p.getIp());
-		Assert.assertTrue(ItemPedido.class.isInstance(p.getIp()));
+		Assert.assertTrue(ItemPedido.class.isInstance(p.getIp()[1]));
+		Assert.assertEquals(quantidade, p.getIp()[1].getQuantidade());
+		Assert.assertEquals(p.getIp()[1].getItem(), item);
+		Assert.assertEquals(p.getIp()[1].getItem().getDescricaoItem(), item.getDescricaoItem());
 	}
 	
-	
+	@Test
+	public void testeFinalizarPedido(){
+		
+	}
 }

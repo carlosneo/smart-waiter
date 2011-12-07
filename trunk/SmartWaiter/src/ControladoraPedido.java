@@ -1,9 +1,11 @@
 
 public class ControladoraPedido {
  
-	private Pedido pedido;
+	private static Pedido pedido[];
 	private Cliente cliente;
 	private Garcom garcom;
+
+	static int i=0;
 	
 	public static ControladoraPedido instanciaControladoraPedido = null;
 	
@@ -18,6 +20,9 @@ public class ControladoraPedido {
 	}
 	 
 	public Pedido iniciarPedido(int numeroMesa) {
+		pedido[i] = Pedido.obterPedido();
+		
+		i++;
 		return null;
 	}
 	 

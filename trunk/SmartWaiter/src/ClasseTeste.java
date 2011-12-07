@@ -25,7 +25,7 @@ public class ClasseTeste {
 	public void testeIniciarPedido(){
 		Mesa mesa = Mesa.obterMesa(1, true);
 		ControladoraPedido ctrlPedido = ControladoraPedido.obterControladoraPedido();
-		Pedido p = ctrlPedido.iniciarPedido(mesa, "pendente", null ,0);
+		Pedido p = ctrlPedido.iniciarPedido(mesa, 0);
 		
 		//Testes na operação iniciarPedido()
 		Assert.assertNotNull(p);
@@ -41,7 +41,7 @@ public class ClasseTeste {
 	public void testeInserirNovoItem(){
 		Mesa mesa = Mesa.obterMesa(2, true);
 		ControladoraPedido ctrlPedido = ControladoraPedido.obterControladoraPedido();
-		Pedido p = ctrlPedido.iniciarPedido(mesa, "pendente", null, 0);
+		Pedido p = ctrlPedido.iniciarPedido(mesa, 0);
 		Item item = Item.adicionarItem(1);
 		int quantidade = 2;
 		
@@ -57,6 +57,15 @@ public class ClasseTeste {
 	
 	@Test
 	public void testeFinalizarPedido(){
+		Mesa mesa = Mesa.obterMesa(2, true);
+		ControladoraPedido ctrlPedido = ControladoraPedido.obterControladoraPedido();
+		Pedido p = ctrlPedido.iniciarPedido(mesa, 0);
+		String setor = "cozinha";
 		
+		ctrlPedido.finalizarPedido(p, setor);
+		
+		//Testes na operação de finalizarPedido()
+		Assert.assertEquals("pendente", p.getStatus());
+		Assert.assertSame(p.getSetor(), Restaurante.obterRestaurante().obterSetor(p, setor));
 	}
 }

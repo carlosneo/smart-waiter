@@ -3,6 +3,7 @@ public class Item {
  
 	private int idItem;
 	private DescricaoItem descricaoItem;
+	private String tipo;
 	
 	private Item(int idItem){
 		this.idItem = idItem;
@@ -12,6 +13,7 @@ public class Item {
 		return new Item(idItem);
 	}
 
+	//Getters and setters
 	public int getIdItem() {
 		return idItem;
 	}
@@ -27,7 +29,14 @@ public class Item {
 	public void setDescricaoItem(DescricaoItem descricaoItem) {
 		this.descricaoItem = descricaoItem;
 	}
-	 
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
 	
 }
  

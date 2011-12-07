@@ -5,13 +5,13 @@ public class Pedido {
 	private String status;
 	private ItemPedido ip[] = new ItemPedido[100];
 	private Mesa mesa;
+	private Restaurante setor = null;
 
 	static int i;
 	
-	private Pedido(Mesa mesa, String status, ItemPedido ip[], int idPedido){
+	private Pedido(Mesa mesa, int idPedido){
 		this.mesa = mesa;
-		this.status = status;
-		this.ip = ip;
+		this.status = "em andamento";
 		this.setIdPedido(idPedido);
 		System.out.println("Mesa " + this.mesa.getNumeroMesa() + " associada ao pedido");
 	}
@@ -21,12 +21,18 @@ public class Pedido {
 		 ip[i] = ItemPedido.obterItemPedido(item, quantidade);
 	}
 	
+	public void alterarStatus(Pedido p, String setor) {
+		 this.setSetor(Restaurante.obterRestaurante().obterSetor(p, setor));
+		 if(setor != null)
+			 this.status="pendente";			 
+	}
+	
+	public static Pedido novoPedido(Mesa mesa, int idPedido) {
+		return new Pedido(mesa, idPedido);
+	}
+	
 	public void itemDoPedido(int dPedido) {
 	
-	}
-		
-	public static Pedido novoPedido(Mesa mesa, String status, ItemPedido[] ip, int idPedido) {
-		return new Pedido(mesa, status, ip, idPedido);
 	}
 	 
 	public void selecionarPedido(int idPedido) {
@@ -37,14 +43,12 @@ public class Pedido {
 	 
 	}
 	 
-	public void alterarStatus(Pedido p) {
-	 
-	}
-	 
 	public int selecionar(int idPedido) {
 		return 0;
 	}
 	
+	
+	//Getters and Setters
 	public String getStatus() {
 		return status;
 	}
@@ -75,6 +79,14 @@ public class Pedido {
 
 	public int getIdPedido() {
 		return idPedido;
+	}
+
+	public void setSetor(Restaurante setor) {
+		this.setor = setor;
+	}
+
+	public Restaurante getSetor() {
+		return setor;
 	}
 
 }

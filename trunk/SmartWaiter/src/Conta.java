@@ -1,77 +1,40 @@
 import java.sql.Time;
 import java.util.Date;
 
-
 public class Conta {
- 
-	private Date dataAbertura;
-	private Date dataFechamento;
-	private Time horaAbertura;
-	private Time horaFechamento;
+
 	private float valorTotal;
 	private boolean status;
 	private int[ ] idPedido;
 	private int[ ] itemDoPedido;
-	private Mesa m;
 	private Mesa mesa;
-	private Pagamento pagamento;
-	private Pedido pedido;
-	private ControladoraConta controladoraConta;
+	private Pedido pedido[] = new Pedido[100];
+	int i;
+	int j;
 	
-	public Conta(int numeroMesa) {
-		this.valorTotal = (float) 100.0;
+	public Conta() {
+		this.status = false;	
 	}
-	 
+	
+	public static Conta adicionarConta(Mesa mesa) {
+		return new Conta();
+	}
+	
 	public void selecionarConta(Conta c) {
 		
 	}
 	 
-	public void inserirPedido(int idPedido) {
-		
+	public void inserirPedido(Pedido pedido) {
+		this.pedido[i] = pedido;
 	}
 	 
 	public float calcularValorTotal(Conta c) {
-		return this.valorTotal = (float) 123.79;
+		return (Float) null;
 	}
 	 
-	public static Conta adicionarConta(int numeroMesa) {
-		return new Conta(numeroMesa);
-	}
-
 	/*
 	 * Getters and Setters
 	 */
-	public Date getDataAbertura() {
-		return dataAbertura;
-	}
-
-	public void setDataAbertura(Date dataAbertura) {
-		this.dataAbertura = dataAbertura;
-	}
-
-	public Date getDataFechamento() {
-		return dataFechamento;
-	}
-
-	public void setDataFechamento(Date dataFechamento) {
-		this.dataFechamento = dataFechamento;
-	}
-
-	public Time getHoraAbertura() {
-		return horaAbertura;
-	}
-
-	public void setHoraAbertura(Time horaAbertura) {
-		this.horaAbertura = horaAbertura;
-	}
-
-	public Time getHoraFechamento() {
-		return horaFechamento;
-	}
-
-	public void setHoraFechamento(Time horaFechamento) {
-		this.horaFechamento = horaFechamento;
-	}
 
 	public float getValorTotal() {
 		return valorTotal;
@@ -105,14 +68,6 @@ public class Conta {
 		this.itemDoPedido = itemDoPedido;
 	}
 
-	public Mesa getM() {
-		return m;
-	}
-
-	public void setM(Mesa m) {
-		this.m = m;
-	}
-
 	public Mesa getMesa() {
 		return mesa;
 	}
@@ -121,28 +76,13 @@ public class Conta {
 		this.mesa = mesa;
 	}
 
-	public Pagamento getPagamento() {
-		return pagamento;
-	}
-
-	public void setPagamento(Pagamento pagamento) {
-		this.pagamento = pagamento;
-	}
-
-	public Pedido getPedido() {
-		return pedido;
-	}
-
-	public void setPedido(Pedido pedido) {
+	public void setPedido(Pedido pedido[]) {
 		this.pedido = pedido;
 	}
 
-	public ControladoraConta getControladoraConta() {
-		return controladoraConta;
+	public Pedido[] getPedido() {
+		return pedido;
 	}
 
-	public void setControladoraConta(ControladoraConta controladoraConta) {
-		this.controladoraConta = controladoraConta;
-	}
 }
  

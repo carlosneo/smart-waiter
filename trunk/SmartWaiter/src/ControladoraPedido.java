@@ -4,7 +4,7 @@ public class ControladoraPedido extends ControladoraDeUC{
 	public static ControladoraPedido instanciaControladoraPedido = null;
 	
 	/*
-	 * Construtor privado para implementação do Singleton
+	 * Construtor privado para implementacao do Singleton
 	 */
 	private ControladoraPedido(){};
 	

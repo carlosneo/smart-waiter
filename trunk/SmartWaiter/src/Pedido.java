@@ -33,19 +33,6 @@ public class Pedido {
 	public void itemDoPedido(int dPedido) {
 	
 	}
-	 
-	public void selecionarPedido(int idPedido) {
-	 
-	}
-	 
-	public void finalizarPedido(Pedido p) {
-	 
-	}
-	 
-	public int selecionar(int idPedido) {
-		return 0;
-	}
-	
 	
 	//Getters and Setters
 	public String getStatus() {

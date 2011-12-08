@@ -17,10 +17,6 @@ public class Conta {
 	public static Conta adicionarConta(Mesa mesa) {
 		return new Conta();
 	}
-	
-	public void selecionarConta(Conta c) {
-		
-	}
 	 
 	public void inserirPedido(Pedido pedido) {
 		this.pedido[i] = pedido;

@@ -8,6 +8,11 @@ public class ControladoraConta extends ControladoraDeUC{
 	
 	public static ControladoraConta instanciaControladoraConta = null;
 	
+	/*
+	 * Construtor privado para implementacao do Singleton
+	 */
+	private ControladoraConta(){};
+	
 	static ControladoraConta obterControladoraConta() {
 		if(instanciaControladoraConta == null)
 			instanciaControladoraConta = new ControladoraConta();
@@ -15,16 +20,25 @@ public class ControladoraConta extends ControladoraDeUC{
 		return instanciaControladoraConta;
 	}
 	
-	private ControladoraConta(){};
-	 
+	/*
+	 * Foi criada uma inst‰ncia Conta conta
+	 * conta foi asssociada a uma Mesa mesa
+	 */
 	public void iniciarFechamentoConta(Mesa mesa) {
 		this.conta = Conta.adicionarConta(mesa);
 	}
-	 
+	
+	/*
+	 * O pedido pedido Ž associado a Conta c
+	 * O idPedido foi atribuido ao c.idPedidos[i]
+	 */
 	public void adicionarPedido(Pedido pedido, Conta c) {		
 		c.inserirPedido(pedido);
 	}
-	 
+	
+	/*
+	 *  
+	 */
 	public void fecharConta(Conta c) {
 	 
 	}

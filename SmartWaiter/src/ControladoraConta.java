@@ -49,7 +49,7 @@ public class ControladoraConta extends ControladoraDeUC{
 		float preco = 100.0f;
 		desc.setPreco(preco);
 		ip.setDescricaoItem(desc);
-		//pedido.setIp(ip);	
+			
 		System.out.println(""+c.getValorItem());
 
 	}

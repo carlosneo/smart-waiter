@@ -27,10 +27,9 @@ public class ControladoraPagamento extends ControladoraDeUC{
 	public void inciarPagamento(Mesa m) {
 		pi++;
 		this.mesa = m;
-		this.conta = Conta.adicionarConta(m.getNumeroMesa());
+		this.conta = Conta.adicionarConta(m);
 		pgto[pi] = Pagamento.criarPagamento(m,this.conta);
 		pgto[pi].valor = pgto[pi].conta.getValorTotal();
-		System.out.println(pgto[pi].toString());
 	}
 	
 	/*
@@ -40,7 +39,6 @@ public class ControladoraPagamento extends ControladoraDeUC{
 	@Override
 	public void escolherFormaPagamento(String forma) {
 		pgto[pi] = Pagamento.definirFormaPagamento(forma,mesa,conta);
-		System.out.println(pgto[pi].toString());
 	}
 	
 	/*
@@ -49,7 +47,6 @@ public class ControladoraPagamento extends ControladoraDeUC{
 	@Override
 	public void finalizarPagamento() {
 		pgto[pi].pagar();
-		System.out.println(pgto[pi].toString());
 	}
 }
  

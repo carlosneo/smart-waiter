@@ -84,4 +84,14 @@ public class ClasseTeste {
 		Assert.assertEquals("pendente", p.getStatus());
 		Assert.assertSame(p.getSetor(), Restaurante.obterRestaurante().obterSetor(p, setor));
 	}
+	
+	@Test
+	public void teste(){
+		ControladoraDeUC ctrlConta = ControladoraDeUC.obterControladora(CONTA);
+		Mesa mesa = Mesa.obterMesa(2, true);
+		Pedido p = ctrlConta.iniciarPedido(mesa, 0);
+		Conta c = new Conta();
+		ctrlConta.adicionarPedido(p, c);
+		
+	}
 }

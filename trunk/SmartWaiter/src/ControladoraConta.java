@@ -24,6 +24,7 @@ public class ControladoraConta extends ControladoraDeUC{
 	 * Foi criada uma inst‰ncia Conta conta
 	 * conta foi asssociada a uma Mesa mesa
 	 */
+	@Override
 	public void iniciarFechamentoConta(Mesa mesa) {
 		this.conta = Conta.adicionarConta(mesa);
 	}
@@ -32,15 +33,25 @@ public class ControladoraConta extends ControladoraDeUC{
 	 * O pedido pedido Ž associado a Conta c
 	 * O idPedido foi atribuido ao c.idPedidos[i]
 	 */
-	public void adicionarPedido(Pedido pedido, Conta c) {		
+	@Override
+	public void adicionarPedido(Pedido pedido, Conta c) {
+		Item it = new Item(1);
+		ItemPedido ip = new ItemPedido(it,3);
+		DescricaoItem desc = new DescricaoItem();
+		float preco = 100.0f;
+		desc.setPreco(preco);
+		ip.setDescricaoItem(desc);
+		//pedido.setIp(ip);
 		c.inserirPedido(pedido);
+		System.out.println(""+c.getValorItem());
 	}
 	
 	/*
 	 *  
 	 */
+	@Override
 	public void fecharConta(Conta c) {
-	 
+		
 	}
 
 	public Conta getIdItem() {

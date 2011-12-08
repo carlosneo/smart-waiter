@@ -11,12 +11,13 @@ public class Conta {
 	static int i;
 	static int j;
 	
-	public Conta() {
+	public Conta(Mesa mesa) {
 		this.status = false;
+		this.mesa = mesa;
 	}
 	
 	public static Conta adicionarConta(Mesa mesa) {
-		return new Conta();
+		return new Conta(mesa);
 	}
 	 
 	public void inserirPedido(Pedido pedido) {

@@ -5,6 +5,7 @@ public class Conta {
 	private boolean status;
 	private int[ ] idPedido;
 	private int[ ] itemDoPedido;
+	private float[ ] valorItem;
 	private Mesa mesa;
 	private Pedido pedido[] = new Pedido[100];
 	static int i;
@@ -24,6 +25,10 @@ public class Conta {
 	}
 	 
 	public float calcularValorTotal(Conta c) {
+		for(int x=0; x<i; x++){
+			valorItem[x] += pedido[x].getIp()[x].getDescricaoItem().pegaPreco() * pedido[x].getIp()[x].getQuantidade();
+		}
+		
 		return (Float) null;
 	}
 
@@ -77,6 +82,14 @@ public class Conta {
 
 	public void setPedido(Pedido[] pedido) {
 		this.pedido = pedido;
+	}
+
+	public float[] getValorItem() {
+		return valorItem;
+	}
+
+	public void setValorItem(float[] valorItem) {
+		this.valorItem = valorItem;
 	}
 }
  

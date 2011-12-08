@@ -36,7 +36,13 @@ public abstract class ControladoraDeUC {
 	public Pedido iniciarPedido(Mesa mesa, int idPedido) {return null;};
 	public void inserirNovoItem(Item item, int quantidade, Pedido p) {};
 	public void finalizarPedido(Pedido p, String setor) {}
-
+	/*
+	 * Metodos da Controladora de Conta
+	 */
+	public void iniciarFechamentoConta(Mesa mesa) {};
+	public void adicionarPedido(Pedido pedido, Conta c) {};
+	public void fecharConta(Conta c) {};
+	
 	public Pedido[] getPedido() {
 		return pedido;
 	}

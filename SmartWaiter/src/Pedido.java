@@ -9,7 +9,7 @@ public class Pedido {
 
 	static int i;
 	
-	private Pedido(Mesa mesa, int idPedido){
+	public Pedido(Mesa mesa, int idPedido){
 		this.mesa = mesa;
 		this.status = "em andamento";
 		this.setIdPedido(idPedido);

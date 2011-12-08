@@ -7,8 +7,12 @@ public class DescricaoItem {
 	private Item item;
 	private Restaurante restaurante;
 	private ItemPedido itemPedido;
-	 
-	public float pegaPreco(int idItem) {
+	
+	public void setPreco(float preco) {
+		this.preco = preco;
+	}
+
+	public float pegaPreco() {
 		return this.preco;
 	}
 

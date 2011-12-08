@@ -5,7 +5,7 @@ public class Item {
 	private DescricaoItem descricaoItem;
 	private String tipo;
 	
-	private Item(int idItem){
+	public Item(int idItem){
 		this.idItem = idItem;
 	}
 	

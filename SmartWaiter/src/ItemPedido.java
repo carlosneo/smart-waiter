@@ -6,7 +6,7 @@ public class ItemPedido {
 	private Pedido pedido;
 	private DescricaoItem descricaoItem;
 	 
-	private ItemPedido(Item item, int quantidade){
+	public ItemPedido(Item item, int quantidade){
 		this.item = item;
 		this.quantidade = quantidade;
 		this.descricaoItem = item.getDescricaoItem();

@@ -22,7 +22,7 @@ public class ControladoraConta extends ControladoraDeUC{
 	}
 	 
 	public void adicionarPedido(Pedido pedido, Conta c) {		
-			c.inserirPedido(pedido);
+		c.inserirPedido(pedido);
 	}
 	 
 	public void fecharConta(Conta c) {

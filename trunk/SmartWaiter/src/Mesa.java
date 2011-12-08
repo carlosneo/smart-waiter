@@ -9,15 +9,11 @@ public class Mesa {
 	private Date dataAbertura;
 	private Date dataFechamento;
 	private Cliente cliente;
-	private Conta conta;
 	private Pedido pedido;
-	private Restaurante restaurante;
-	private Pagamento pagamento;
 	
 	public Mesa(int numeroMesa, boolean status){
 		this.numeroMesa = numeroMesa;
 		this.status = status;
-		this.conta = Conta.adicionarConta(numeroMesa);
 	}
 
 	public static Mesa obterMesa(int numeroMesa, boolean status) {
@@ -56,36 +52,12 @@ public class Mesa {
 		this.cliente = cliente;
 	}
 
-	public Conta getConta() {
-		return conta;
-	}
-
-	public void setConta(Conta conta) {
-		this.conta = conta;
-	}
-
 	public Pedido getPedido() {
 		return pedido;
 	}
 
 	public void setPedido(Pedido pedido) {
 		this.pedido = pedido;
-	}
-
-	public Restaurante getRestaurante() {
-		return restaurante;
-	}
-
-	public void setRestaurante(Restaurante restaurante) {
-		this.restaurante = restaurante;
-	}
-
-	public Pagamento getPagamento() {
-		return pagamento;
-	}
-
-	public void setPagamento(Pagamento pagamento) {
-		this.pagamento = pagamento;
 	}
 
 	public Date getDataAbertura() {

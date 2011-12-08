@@ -3,20 +3,24 @@ import org.junit.Test;
 
 public class ClasseTeste {
 
+	static final int CONTA = 1;
+	static final int PEDIDO = 2;
+	static final int PAGAMENTO = 3;
+	
 	@Test
 	public void testeSingletonControladoras(){
-		ControladoraConta c1 = ControladoraConta.obterControladoraConta();
-		ControladoraConta c2 = ControladoraConta.obterControladoraConta();
+		ControladoraDeUC c1 = ControladoraDeUC.obterControladora(CONTA);
+		ControladoraDeUC c2 = ControladoraDeUC.obterControladora(CONTA);
 		
 		Assert.assertSame(c1, c2);
 		
-		ControladoraPagamento c3 = ControladoraPagamento.obterControladoraPagamento();
-		ControladoraPagamento c4 = ControladoraPagamento.obterControladoraPagamento();
+		ControladoraDeUC c3 = ControladoraDeUC.obterControladora(PAGAMENTO);
+		ControladoraDeUC c4 = ControladoraDeUC.obterControladora(PAGAMENTO);
 		
 		Assert.assertSame(c3, c4);
 		
-		ControladoraPedido c5 = ControladoraPedido.obterControladoraPedido();
-		ControladoraPedido c6 = ControladoraPedido.obterControladoraPedido();
+		ControladoraDeUC c5 = ControladoraDeUC.obterControladora(PEDIDO);
+		ControladoraDeUC c6 = ControladoraDeUC.obterControladora(PEDIDO);
 		
 		Assert.assertSame(c5, c6);
 	}
@@ -24,10 +28,12 @@ public class ClasseTeste {
 	@Test
 	public void testeIniciarPedido(){
 		Mesa mesa = Mesa.obterMesa(1, true);
-		ControladoraPedido ctrlPedido = ControladoraPedido.obterControladoraPedido();
+		ControladoraDeUC ctrlPedido = ControladoraDeUC.obterControladora(PEDIDO);
 		Pedido p = ctrlPedido.iniciarPedido(mesa, 0);
 		
-		//Testes na operação iniciarPedido()
+		/*
+		 * Testes na operacao iniciarPedido()
+		 */
 		Assert.assertNotNull(p);
 		Assert.assertTrue(Pedido.class.isInstance(p));
 		Assert.assertTrue(Mesa.class.isInstance(p.getMesa()));
@@ -40,14 +46,16 @@ public class ClasseTeste {
 	@Test
 	public void testeInserirNovoItem(){
 		Mesa mesa = Mesa.obterMesa(2, true);
-		ControladoraPedido ctrlPedido = ControladoraPedido.obterControladoraPedido();
+		ControladoraDeUC ctrlPedido = ControladoraDeUC.obterControladora(PEDIDO);
 		Pedido p = ctrlPedido.iniciarPedido(mesa, 0);
 		Item item = Item.adicionarItem(1);
 		int quantidade = 2;
 		
 		ctrlPedido.inserirNovoItem(item, quantidade, p);
 		
-		//Testes na operação de inserirNovoItem()
+		/*
+		 * Testes na operacao de inserirNovoItem()
+		 */
 		Assert.assertNotNull(p.getIp());
 		Assert.assertTrue(ItemPedido.class.isInstance(p.getIp()[1]));
 		Assert.assertEquals(quantidade, p.getIp()[1].getQuantidade());
@@ -58,13 +66,15 @@ public class ClasseTeste {
 	@Test
 	public void testeFinalizarPedido(){
 		Mesa mesa = Mesa.obterMesa(2, true);
-		ControladoraPedido ctrlPedido = ControladoraPedido.obterControladoraPedido();
+		ControladoraDeUC ctrlPedido = ControladoraDeUC.obterControladora(PEDIDO);
 		Pedido p = ctrlPedido.iniciarPedido(mesa, 0);
 		String setor = "cozinha";
 		
 		ctrlPedido.finalizarPedido(p, setor);
 		
-		//Testes na operação de finalizarPedido()
+		/*
+		 * Testes na operacao de finalizarPedido()
+		 */
 		Assert.assertEquals("pendente", p.getStatus());
 		Assert.assertSame(p.getSetor(), Restaurante.obterRestaurante().obterSetor(p, setor));
 	}

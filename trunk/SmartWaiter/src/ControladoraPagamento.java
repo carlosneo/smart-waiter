@@ -18,29 +18,29 @@ public class ControladoraPagamento extends ControladoraDeUC{
 		return instanciaControladoraPagamento;
 	}
 	/*
-	 * Foi criada uma inst‰ncia pgto de Pagamento - ok
-	 * A inst‰ncia de pgto Ž associada a Mesa m - ok
-	 * A inst‰ncia pgto recebe valorTotal da Conta - ok
+	 * Foi criada uma instancia pgto de Pagamento - ok
+	 * A instancia de pgto e associada a Mesa m - ok
+	 * A instancia pgto recebe valorTotal da Conta - ok
 	 * Iniciar atributos de pgto - ok
 	 */
 	@Override
 	public void inciarPagamento(Mesa m) {
-		i++;
+		pi++;
 		this.mesa = m;
 		this.conta = Conta.adicionarConta(m.getNumeroMesa());
-		pgto[i] = Pagamento.criarPagamento(m,this.conta);
-		pgto[i].valor = pgto[i].conta.getValorTotal();
-		System.out.println(pgto[i].toString());
+		pgto[pi] = Pagamento.criarPagamento(m,this.conta);
+		pgto[pi].valor = pgto[pi].conta.getValorTotal();
+		System.out.println(pgto[pi].toString());
 	}
 	
 	/*
-	 * O objeto pgto Ž retornado com o seu respectivo objeto especializado
-	 * (Dinheiro ou Cart‹o) - ok
+	 * O objeto pgto e retornado com o seu respectivo objeto especializado
+	 * (Dinheiro ou Cartao) - ok
 	 */
 	@Override
 	public void escolherFormaPagamento(String forma) {
-		pgto[i] = Pagamento.definirFormaPagamento(forma,mesa,conta);
-		System.out.println(pgto[i].toString());
+		pgto[pi] = Pagamento.definirFormaPagamento(forma,mesa,conta);
+		System.out.println(pgto[pi].toString());
 	}
 	
 	/*
@@ -48,36 +48,8 @@ public class ControladoraPagamento extends ControladoraDeUC{
 	 */
 	@Override
 	public void finalizarPagamento() {
-		pgto[i].pagar();
-		System.out.println(pgto[i].toString());
-	}
-
-	/*
-	 * Getters and Setters
-	 */
-	
-	public Pagamento[] getPgto() {
-		return pgto;
-	}
-
-	public void setPgto(Pagamento[] pgto) {
-		this.pgto = pgto;
-	}
-
-	public Mesa getMesa() {
-		return mesa;
-	}
-
-	public void setMesa(Mesa mesa) {
-		this.mesa = mesa;
-	}
-
-	public Conta getConta() {
-		return conta;
-	}
-
-	public void setConta(Conta conta) {
-		this.conta = conta;
+		pgto[pi].pagar();
+		System.out.println(pgto[pi].toString());
 	}
 }
  

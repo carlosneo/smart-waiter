@@ -16,7 +16,8 @@ public class Testes {
 		cp.getPgto()[1].conta.setStatus(fechado);
 		
 		/*
-		 * Pre-condicao conta fechada
+		 * Pre-condicao 
+		 * - Conta fechada
 		*/
 		Assert.assertEquals(cp.getPgto()[1].conta.isStatus(), fechado);
 		/*
@@ -47,7 +48,8 @@ public class Testes {
 		cp.escolherFormaPagamento(formaPag);
 		
 		/*
-		 * Pre-condicao existe uma instancia de Pagamento
+		 * Pre-condicao 
+		 * - Existe uma instancia de Pagamento
 		 */
 		Assert.assertNotNull(cp.getPgto());
 		/*
@@ -60,7 +62,8 @@ public class Testes {
 		cp.escolherFormaPagamento(formaPag);
 
 		/*
-		 * Pre-condicao existe uma instancia de Pagamento
+		 * Pre-condicao 
+		 * - Existe uma instancia de Pagamento
 		 */
 		Assert.assertNotNull(cp.getPgto());
 		/*
@@ -81,7 +84,8 @@ public class Testes {
 		cp.finalizarPagamento();
 		
 		/*
-		 * Pre-condicao existe um objeto PGTO : Pagamento instanciado
+		 * Pre-condicao 
+		 * - Existe um objeto PGTO : Pagamento instanciado
 		 */
 		Assert.assertNotNull(cp.getPgto());
 		Assert.assertTrue(Pagamento.class.isInstance(cp.getPgto()[1]));

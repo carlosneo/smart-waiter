@@ -32,6 +32,12 @@ public class ClasseTeste {
 		Pedido p = ctrlPedido.iniciarPedido(mesa, 0);
 		
 		/*
+		 * Pre-condicao
+		 * - Existe uma mesa aberta
+		 */
+		Assert.assertEquals(p.getMesa().isStatus(), true);
+		
+		/*
 		 * Testes na operacao iniciarPedido()
 		 */
 		Assert.assertNotNull(p);

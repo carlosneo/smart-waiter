@@ -1,9 +1,13 @@
+import java.util.Date;
+
 
 public class Mesa {
  
 	private int numeroMesa;
 	private int capacidade;
 	private boolean status;
+	private Date dataAbertura;
+	private Date dataFechamento;
 	private Cliente cliente;
 	private Conta conta;
 	private Pedido pedido;
@@ -84,5 +88,20 @@ public class Mesa {
 		this.pagamento = pagamento;
 	}
 
+	public Date getDataAbertura() {
+		return dataAbertura;
+	}
+
+	public void setDataAbertura(Date dataAbertura) {
+		this.dataAbertura = dataAbertura;
+	}
+
+	public Date getDataFechamento() {
+		return dataFechamento;
+	}
+
+	public void setDataFechamento(Date dataFechamento) {
+		this.dataFechamento = dataFechamento;
+	}
 }
  

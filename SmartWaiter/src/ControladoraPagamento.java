@@ -1,10 +1,6 @@
 
 public class ControladoraPagamento extends ControladoraDeUC{
  
-	private Pagamento pgto[] = new Pagamento[100];
-	static int i;
-	private Mesa mesa;
-	private Conta conta;
 	public static ControladoraPagamento instanciaControladoraPagamento = null;
 	
 	/*
@@ -27,6 +23,7 @@ public class ControladoraPagamento extends ControladoraDeUC{
 	 * A inst‰ncia pgto recebe valorTotal da Conta - ok
 	 * Iniciar atributos de pgto - ok
 	 */
+	@Override
 	public void inciarPagamento(Mesa m) {
 		i++;
 		this.mesa = m;
@@ -40,6 +37,7 @@ public class ControladoraPagamento extends ControladoraDeUC{
 	 * O objeto pgto Ž retornado com o seu respectivo objeto especializado
 	 * (Dinheiro ou Cart‹o) - ok
 	 */
+	@Override
 	public void escolherFormaPagamento(String forma) {
 		pgto[i] = Pagamento.definirFormaPagamento(forma,mesa,conta);
 		System.out.println(pgto[i].toString());
@@ -48,6 +46,7 @@ public class ControladoraPagamento extends ControladoraDeUC{
 	/*
 	 * pgto.valor igual a valor da conta - ok
 	 */
+	@Override
 	public void finalizarPagamento() {
 		pgto[i].pagar();
 		System.out.println(pgto[i].toString());

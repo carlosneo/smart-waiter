@@ -1,5 +1,5 @@
 
-public class ControladoraPagamento {
+public class ControladoraPagamento extends ControladoraDeUC{
  
 	private Pagamento pgto[] = new Pagamento[100];
 	static int i;
@@ -10,7 +10,7 @@ public class ControladoraPagamento {
 	/*
 	 * Construtor privado para implementação do Singleton
 	 */
-	private ControladoraPagamento(){}
+	private ControladoraPagamento(){};
 	
 	/*
 	 * Implementação do método Singleton

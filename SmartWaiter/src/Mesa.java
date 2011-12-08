@@ -9,7 +9,8 @@ public class Mesa {
 	private Date dataAbertura;
 	private Date dataFechamento;
 	private Cliente cliente;
-	private Pedido pedido;
+	private Pedido pedido[] = new Pedido[100];
+	int i;
 	
 	public Mesa(int numeroMesa, boolean status){
 		this.numeroMesa = numeroMesa;
@@ -52,14 +53,6 @@ public class Mesa {
 		this.cliente = cliente;
 	}
 
-	public Pedido getPedido() {
-		return pedido;
-	}
-
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
-	}
-
 	public Date getDataAbertura() {
 		return dataAbertura;
 	}
@@ -74,6 +67,14 @@ public class Mesa {
 
 	public void setDataFechamento(Date dataFechamento) {
 		this.dataFechamento = dataFechamento;
+	}
+
+	public void setPedido(Pedido pedido[]) {
+		this.pedido = pedido;
+	}
+
+	public Pedido[] getPedido() {
+		return pedido;
 	}
 }
  

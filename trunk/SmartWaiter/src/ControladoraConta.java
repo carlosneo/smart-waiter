@@ -35,15 +35,7 @@ public class ControladoraConta extends ControladoraDeUC{
 	 */
 	@Override
 	public void adicionarPedido(Pedido pedido, Conta c) {
-		Item it = new Item(1);
-		ItemPedido ip = new ItemPedido(it,3);
-		DescricaoItem desc = new DescricaoItem();
-		float preco = 100.0f;
-		desc.setPreco(preco);
-		ip.setDescricaoItem(desc);
-		//pedido.setIp(ip);
 		c.inserirPedido(pedido);
-		System.out.println(""+c.getValorItem());
 	}
 	
 	/*
@@ -51,7 +43,15 @@ public class ControladoraConta extends ControladoraDeUC{
 	 */
 	@Override
 	public void fecharConta(Conta c) {
-		
+		Item it = new Item(1);
+		ItemPedido ip = new ItemPedido(it,3);
+		DescricaoItem desc = new DescricaoItem();
+		float preco = 100.0f;
+		desc.setPreco(preco);
+		ip.setDescricaoItem(desc);
+		//pedido.setIp(ip);	
+		System.out.println(""+c.getValorItem());
+
 	}
 
 	public Conta getIdItem() {

@@ -1,5 +1,5 @@
 
-public class ControladoraConta {
+public class ControladoraConta extends ControladoraDeUC{
  
 	private Conta idItem;
 	private Cliente cliente;
@@ -8,15 +8,14 @@ public class ControladoraConta {
 	
 	public static ControladoraConta instanciaControladoraConta = null;
 	
-	private ControladoraConta(){
-		
-	}
-	
-	public static ControladoraConta obterControladoraConta(){
+	static ControladoraConta obterControladoraConta() {
 		if(instanciaControladoraConta == null)
 			instanciaControladoraConta = new ControladoraConta();
+		
 		return instanciaControladoraConta;
 	}
+	
+	private ControladoraConta(){};
 	 
 	public void iniciarFechamentoConta(int numeroMesa) {
 	 
@@ -29,6 +28,6 @@ public class ControladoraConta {
 	public void fecharConta(Conta c) {
 	 
 	}
-	 
+
 }
  

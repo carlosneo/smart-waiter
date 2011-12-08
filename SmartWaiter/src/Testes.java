@@ -89,4 +89,11 @@ public class Testes {
 		Assert.assertEquals(cp.getPgto()[1].valor, cp.getPgto()[1].conta.getValorTotal());
 		System.out.println();
 	}
+	
+	@Test
+	public void testeControladoraDeUC(){
+		ControladoraDeUC cuc = ControladoraDeUC.obterControladora(3);
+		
+		System.out.println(cuc);
+	}
 }

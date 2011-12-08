@@ -1,18 +1,17 @@
 
-public class ControladoraPedido {
+public class ControladoraPedido extends ControladoraDeUC{
  
 	private Pedido pedido[] = new Pedido[100];
 	public static ControladoraPedido instanciaControladoraPedido = null;
 	static int i;
 	
-	private ControladoraPedido(){
-		
-	}
+	private ControladoraPedido(){};
 	
 	//Implementação do singleton na controladora dos pedidos
-	public static ControladoraPedido obterControladoraPedido(){
+	static ControladoraPedido obterControladoraPedido(){
 		if(instanciaControladoraPedido == null)
 			instanciaControladoraPedido = new ControladoraPedido();
+		
 		return instanciaControladoraPedido;
 	}
 	 

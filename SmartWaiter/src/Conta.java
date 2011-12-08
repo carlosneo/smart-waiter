@@ -1,5 +1,3 @@
-import java.sql.Time;
-import java.util.Date;
 
 public class Conta {
 
@@ -9,11 +7,11 @@ public class Conta {
 	private int[ ] itemDoPedido;
 	private Mesa mesa;
 	private Pedido pedido[] = new Pedido[100];
-	int i;
-	int j;
+	static int i;
+	static int j;
 	
 	public Conta() {
-		this.status = false;	
+		this.status = false;
 	}
 	
 	public static Conta adicionarConta(Mesa mesa) {
@@ -26,16 +24,17 @@ public class Conta {
 	 
 	public void inserirPedido(Pedido pedido) {
 		this.pedido[i] = pedido;
+		this.idPedido[i] = pedido.getIdPedido();
 	}
 	 
 	public float calcularValorTotal(Conta c) {
 		return (Float) null;
 	}
-	 
+
 	/*
 	 * Getters and Setters
 	 */
-
+	
 	public float getValorTotal() {
 		return valorTotal;
 	}
@@ -76,13 +75,12 @@ public class Conta {
 		this.mesa = mesa;
 	}
 
-	public void setPedido(Pedido pedido[]) {
-		this.pedido = pedido;
-	}
-
 	public Pedido[] getPedido() {
 		return pedido;
 	}
 
+	public void setPedido(Pedido[] pedido) {
+		this.pedido = pedido;
+	}
 }
  

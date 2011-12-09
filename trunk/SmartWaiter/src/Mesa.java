@@ -8,7 +8,6 @@ public class Mesa {
 	private boolean status;
 	private Date dataAbertura;
 	private Date dataFechamento;
-	private Cliente cliente;
 	private Pedido pedido[] = new Pedido[100];
 	int i;
 	
@@ -43,14 +42,6 @@ public class Mesa {
 
 	public void setStatus(boolean status) {
 		this.status = status;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
 	}
 
 	public Date getDataAbertura() {

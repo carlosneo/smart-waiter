@@ -34,11 +34,8 @@ public class ControladoraConta extends ControladoraDeUC{
 		conta.inserirPedido(pedido);
 	}
 	
-	/*
-	 *  
-	 */
 	@Override
-	public void fecharConta(Conta c) {}
+	public void fecharConta(Conta c) {};
 
 	public Conta getConta() {
 		return conta;
@@ -46,15 +43,6 @@ public class ControladoraConta extends ControladoraDeUC{
 
 	public void setConta(Conta conta) {
 		this.conta = conta;
-	}
-
-	public static ControladoraConta getInstanciaControladoraConta() {
-		return instanciaControladoraConta;
-	}
-
-	public static void setInstanciaControladoraConta(
-			ControladoraConta instanciaControladoraConta) {
-		ControladoraConta.instanciaControladoraConta = instanciaControladoraConta;
 	}
 }
  

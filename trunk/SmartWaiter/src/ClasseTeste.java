@@ -112,9 +112,23 @@ public class ClasseTeste {
 	public void testeAdicionarPedido(){
 		ControladoraDeUC ctrlConta = ControladoraDeUC.obterControladora(CONTA);
 		Mesa mesa = Mesa.obterMesa(1, true);
-		Pedido p = new Pedido(mesa, 1);
-		ctrlConta.iniciarFechamentoConta(mesa);
+		Pedido p[] = new Pedido[10];
+		p[0] = new Pedido(mesa, 1);
+		Conta c = new Conta(mesa);
+		ctrlConta.adicionarPedido(p[0],c);
 		
+		/*
+		 * Pre-condicao
+		 * - Deve exister um fechamento de conta em andamento
+		 */
+		Assert.assertEquals(ctrlConta.getConta().isStatus(), false);
+		/*
+		 * Pos-condicao
+		 * - Pedido p Ž associado a Conta c
+		 * - O idPedido foi atribuido a c.idPedido[i]
+		 */
+		Assert.assertEquals(ctrlConta.getConta().getPedido()[0], p[0]);
+		Assert.assertEquals(ctrlConta.getConta().getPedido()[0].getIdPedido(), 1);
 		
 	}
 	

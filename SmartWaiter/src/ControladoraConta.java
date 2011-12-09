@@ -1,9 +1,5 @@
 
 public class ControladoraConta extends ControladoraDeUC{
- 
-	private Conta idItem;
-	private Cliente cliente;
-	private Caixa caixa;
 	
 	public static ControladoraConta instanciaControladoraConta = null;
 	
@@ -42,25 +38,7 @@ public class ControladoraConta extends ControladoraDeUC{
 	 *  
 	 */
 	@Override
-	public void fecharConta(Conta c) {
-		
-	}
-
-	public Conta getIdItem() {
-		return idItem;
-	}
-
-	public void setIdItem(Conta idItem) {
-		this.idItem = idItem;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
+	public void fecharConta(Conta c) {}
 
 	public Conta getConta() {
 		return conta;
@@ -68,14 +46,6 @@ public class ControladoraConta extends ControladoraDeUC{
 
 	public void setConta(Conta conta) {
 		this.conta = conta;
-	}
-
-	public Caixa getCaixa() {
-		return caixa;
-	}
-
-	public void setCaixa(Caixa caixa) {
-		this.caixa = caixa;
 	}
 
 	public static ControladoraConta getInstanciaControladoraConta() {

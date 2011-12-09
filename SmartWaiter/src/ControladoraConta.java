@@ -3,7 +3,6 @@ public class ControladoraConta extends ControladoraDeUC{
  
 	private Conta idItem;
 	private Cliente cliente;
-	private Conta conta;
 	private Caixa caixa;
 	
 	public static ControladoraConta instanciaControladoraConta = null;
@@ -35,7 +34,8 @@ public class ControladoraConta extends ControladoraDeUC{
 	 */
 	@Override
 	public void adicionarPedido(Pedido pedido, Conta c) {
-		c.inserirPedido(pedido);
+		this.conta = c;
+		conta.inserirPedido(pedido);
 	}
 	
 	/*
@@ -43,15 +43,7 @@ public class ControladoraConta extends ControladoraDeUC{
 	 */
 	@Override
 	public void fecharConta(Conta c) {
-		Item it = new Item(1);
-		ItemPedido ip = new ItemPedido(it,3);
-		DescricaoItem desc = new DescricaoItem();
-		float preco = 100.0f;
-		desc.setPreco(preco);
-		ip.setDescricaoItem(desc);
-			
-		System.out.println(""+c.getValorItem());
-
+		
 	}
 
 	public Conta getIdItem() {

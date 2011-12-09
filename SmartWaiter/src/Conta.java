@@ -3,13 +3,13 @@ public class Conta {
 
 	private float valorTotal;
 	private boolean status;
-	private int[ ] idPedido;
+	private int[ ] idPedido = new int[100];
 	private int[ ] itemDoPedido;
 	private float[ ] valorItem;
 	private Mesa mesa;
 	private Pedido pedido[] = new Pedido[100];
-	static int i;
-	static int j;
+	static int i=0;
+	static int j=0;
 	
 	public Conta(Mesa mesa) {
 		this.status = false;
@@ -23,6 +23,7 @@ public class Conta {
 	public void inserirPedido(Pedido pedido) {
 		this.pedido[i] = pedido;
 		this.idPedido[i] = pedido.getIdPedido();
+		i++;
 	}
 	 
 	public float calcularValorTotal(Conta c) {
